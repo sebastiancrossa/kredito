@@ -12,12 +12,39 @@ label {
 }
 
 input[type='text'],
-input[type='date'] {
+input[type='date'],
+input[type='number'] {
   margin-bottom: 20px;
   padding: 8px 18px;
 
   border: 1px solid rgba(218, 218, 218, 0.877);
   border-radius: 5px;
+}
+
+input[type='number'] {
+  padding: 8px 10px;
+}
+
+.personafisica-ingresos-input {
+  display: flex;
+
+  width: 170px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(218, 218, 218, 0.877);
+  border-radius: 5px;
+}
+
+.personafisica-signo {
+  margin-top: 5px;
+  margin-right: 1px;
+  margin-bottom: 0px;
+  padding-left: 10px;
+}
+
+#personafisica-ingresos,
+#personafisica-prestamo {
+  border: none;
+  margin-bottom: 0px;
 }
 
 button {

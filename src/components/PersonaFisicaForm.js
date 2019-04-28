@@ -13,10 +13,16 @@ class PersonaFisicaForm extends Component {
         <input type='date' id='personafisicaform-date' />
 
         <label for='personafisicaform-ingresos'>Ingresos mensuales:</label>
-        <input type='text' id='personafisicaform-ingresos' />
+        <div className='personafisica-ingresos-input'>
+          <p className='personafisica-signo'>$</p>
+          <input type='number' id='personafisica-ingresos' />
+        </div>
 
         <label for='personafisicaform-prestamo'>Pedido de prestamo:</label>
-        <input type='text' id='personafisicaform-prestamo' />
+        <div className='personafisica-ingresos-input'>
+          <p className='personafisica-signo'>$</p>
+          <input type='number' id='personafisica-prestamo' />
+        </div>
 
         <button type='submit'>SUBMIT</button>
       </form>
