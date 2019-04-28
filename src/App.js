@@ -16,7 +16,7 @@ function App() {
         <div className='app-title'>
           <img src={logo} className='app-title-header' alt='Kredito logo' />
           <p className='app-title-desc'>
-            La forma mas rapida de pedir un prestamo
+            La forma más rápida de pedir un prestamo
           </p>
         </div>
 

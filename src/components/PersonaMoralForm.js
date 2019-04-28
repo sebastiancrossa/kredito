@@ -18,7 +18,7 @@ import b4 from '../imgs/4.png';
 import b5 from '../imgs/5.jpg';
 import b6 from '../imgs/6.png';
 
-import arrow from '../imgs/left-arrow.svg';
+import ScrollReveal from '../util/ScrollReveal';
 
 const style = {
   width: 400,
@@ -51,6 +51,19 @@ const customModalStyles = {
 };
 
 class PersonaMoralForm extends Component {
+  componentDidMount = () => {
+    const config = {
+      origin: 'bottom',
+      duration: 1000,
+      delay: 150,
+      distance: '500px',
+      scale: 0.8,
+      easing: 'ease'
+    };
+
+    ScrollReveal.reveal(this.refs.box1, config);
+  };
+
   constructor(props) {
     super(props);
 
@@ -200,7 +213,7 @@ class PersonaMoralForm extends Component {
         onSubmit={this.handleSubmit}
         onChange={this.onChangeOpacity}
       >
-        <label htmlFor='personamoralform-name'>Nombre Completo:</label>
+        <label htmlFor='personamoralform-name'>Nombre completo:</label>
         <input
           type='text'
           id='personamoralform-name'
@@ -217,7 +230,7 @@ class PersonaMoralForm extends Component {
           />
         </div>
 
-        <label for='personamoralform-date'>Fecha de naciemiento:</label>
+        <label for='personamoralform-date'>Fecha de nacimiento:</label>
         <input
           type='date'
           id='personafisicaform-date'
@@ -234,7 +247,7 @@ class PersonaMoralForm extends Component {
           />
         </div>
 
-        <label for='personamoral-prestamo'>Pedido de prestamo:</label>
+        <label for='personamoral-prestamo'>Cantidad deseada:</label>
         <div className='personamoral-ingresos-input'>
           <p className='personamoralform-signo'>$</p>
           <input
@@ -278,6 +291,7 @@ class PersonaMoralForm extends Component {
           onRequestClose={this.closeModal}
           style={customModalStyles}
           contentLabel='Lista de bancos...'
+          refs='box1'
         >
           <button className='modal-button' onClick={this.closeModal}>
             x
@@ -315,6 +329,7 @@ class PersonaMoralForm extends Component {
           onRequestClose={this.closeModal2}
           style={customModalStyles}
           contentLabel='Resultado...'
+          refs='box1'
         >
           <h2 className='modal-title'>Resultado</h2>
           <div className='modal2-resultado' />

@@ -34,7 +34,7 @@ class PersonaFisica extends Component {
               alt='Back arrow'
             />
           </Link>
-          <h1 className='personafisica-info-header'>Persona Fisica</h1>
+          <h1 className='personafisica-info-header'>Persona Física</h1>
         </div>
 
         <div className='personafisica-form'>
