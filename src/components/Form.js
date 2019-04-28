@@ -16,7 +16,10 @@ class Form extends Component {
             FISICA
           </Link>
 
-          <Link className='form-button-group-moral form-button-group-button'>
+          <Link
+            to='/persona/moral/form'
+            className='form-button-group-moral form-button-group-button'
+          >
             MORAL
           </Link>
         </div>
