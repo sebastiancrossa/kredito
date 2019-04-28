@@ -9,6 +9,7 @@
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.0",
     "react-scripts": "3.0.0",
+    "scrollreveal": "^4.0.5",
     "unirest": "^0.6.0"
   },
   "scripts": {
