@@ -123,3 +123,24 @@ button {
 
   border-radius: 5px;
 }
+
+.modal-submit-link {
+  display: block;
+
+  width: 100%;
+  padding: 20px;
+
+  background: none;
+  border: none;
+  border-radius: 5px;
+
+  text-decoration: none;
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  font-size: 15px;
+
+  color: white;
+  background-color: #7264c9;
+  text-align: center;
+
+  margin-top: 40px;
+}

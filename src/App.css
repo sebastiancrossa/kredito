@@ -1,7 +1,18 @@
+body {
+  overflow: hidden;
+}
+
+.App {
+  overflow: hidden;
+  padding-top: 50px;
+}
+
 .App-header {
   font-size: 35px;
   color: rgb(76, 68, 68);
   font-weight: 600;
+
+  margin-top: 40px;
 }
 
 .app-title {
@@ -9,10 +20,8 @@
 }
 
 .app-title-header {
-  font-family: 'Montserrat', 'Franklin Gothic Medium', 'Arial Narrow', Arial,
-    sans-serif;
-  font-weight: 700;
-  font-size: 30px;
+  width: 280px;
+  height: auto;
 
   margin-bottom: 5px;
 }
@@ -33,7 +42,7 @@
   width: 500px;
   padding: 40px;
 
-  -webkit-box-shadow: 0px 8px 39px -11px rgba(166, 166, 166, 0.37);
+  -webkit-box-shadow: 0px 8px 39px -11px rgba(166, 166, 166, 0.425);
   -moz-box-shadow: 0px 8px 39px -11px rgba(166, 166, 166, 0.37);
   box-shadow: 0px 8px 39px -11px rgba(166, 166, 166, 0.37);
 
@@ -50,4 +59,18 @@
 
 .app-title {
   text-align: center;
+}
+
+.blob1 {
+  position: absolute;
+  left: -170px;
+  bottom: -330px;
+
+  overflow: hidden;
+}
+
+.blob2 {
+  position: absolute;
+  right: -240px;
+  top: -250px;
 }

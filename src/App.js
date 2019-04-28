@@ -3,13 +3,18 @@ import './App.css';
 
 // Component imports
 import Form from './components/Form';
+import blob1 from './imgs/blob1.svg';
+import blob2 from './imgs/blob2.svg';
+import logo from './imgs/kredito_logo@3x.png';
 
 function App() {
   return (
     <div className='App'>
+      <img src={blob1} className='blob1' alt='' />
+      <img src={blob2} className='blob2' alt='' />
       <div className='app-main'>
         <div className='app-title'>
-          <h2 className='app-title-header'>Kredito</h2>
+          <img src={logo} className='app-title-header' alt='Kredito logo' />
           <p className='app-title-desc'>
             La forma mas rapida de pedir un prestamo
           </p>
