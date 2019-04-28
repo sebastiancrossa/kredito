@@ -1,4 +1,4 @@
-.personafisica {
+.personamoral {
   position: absolute;
   top: 49%;
   left: 50%;
@@ -6,13 +6,13 @@
   transform: translate(-50%, -50%);
 }
 
-.personafisica-info {
+.personamoral-info {
   margin-bottom: 20px;
   display: grid;
   grid-template-columns: 10% 90%;
 }
 
-.personafisica-info-header {
+.personamoral-info-header {
   display: block;
   text-align: center;
   margin: 0 auto;
@@ -22,7 +22,7 @@
   padding-right: 20px;
 }
 
-.personafisica-info-back {
+.personamoral-info-back {
   text-decoration: none;
   color: white;
   background-color: #7264c9;
@@ -34,7 +34,7 @@
   font-size: 13px;
 }
 
-.personafisica-form {
+.personamoral-form {
   width: 500px;
   padding: 40px;
 
