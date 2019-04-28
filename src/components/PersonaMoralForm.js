@@ -105,6 +105,8 @@ class PersonaMoralForm extends Component {
         this.setState({
           puntaje: JSON.parse(res.data).category
         });
+
+        console.log(this.state.puntaje);
       });
 
     this.setState({
@@ -112,6 +114,33 @@ class PersonaMoralForm extends Component {
       modal2IsOpen: true
     });
   };
+
+  renderResultElement() {
+    if (this.state.puntaje == 'A') {
+      return (
+        <p className='resultado-loan'>
+          100% de tu {this.state.loan} de prestamo (${this.state.loan}) +
+          {this.state.loan * 0.1 + this.state.loan}+ 25% de interes
+        </p>
+      );
+    } else if (this.state.puntaje == 'B') {
+      return (
+        <p className='resultado-loan'>
+          100% de tu {this.state.loan} de prestamo (${this.state.loan}) + 29% de
+          interes
+        </p>
+      );
+    } else if (this.state.puntaje == 'C') {
+      return (
+        <p className='resultado-loan'>
+          75% de tu {this.state.loan} de prestamo ($
+          {this.status.loan * 0.75 + this.status.loan}) + 35% de interes
+        </p>
+      );
+    } else {
+      return <p className='resultado-loan'>No tenemos ningun plan para ti</p>;
+    }
+  }
 
   openModal() {
     this.setState({ modalIsOpen: true });
@@ -332,7 +361,7 @@ class PersonaMoralForm extends Component {
           refs='box1'
         >
           <h2 className='modal-title'>Resultado</h2>
-          <div className='modal2-resultado' />
+          <div className='modal2-resultado'>{this.renderResultElement()}</div>
           <Link to='/' className='modal-submit-link'>
             REINICIAR
           </Link>

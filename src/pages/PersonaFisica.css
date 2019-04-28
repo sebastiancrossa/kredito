@@ -65,3 +65,9 @@
 
   border-radius: 5px;
 }
+
+.resultado.loan {
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 40px;
+}
