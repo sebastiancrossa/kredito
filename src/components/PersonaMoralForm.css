@@ -66,6 +66,10 @@ input[type='number'] {
   right: 50px;
 }
 
+#personafisicaform-rfc {
+  text-transform: uppercase;
+}
+
 button {
   display: block;
 
