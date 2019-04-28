@@ -4,6 +4,7 @@ import './PersonaMoral.css';
 import { Link } from 'react-router-dom';
 
 import PersonaMoralForm from '../components/PersonaMoralForm';
+import PersonaFisicaForm from '../components/PersonaFisicaForm';
 
 class PersonaMoral extends Component {
   render() {
@@ -17,7 +18,7 @@ class PersonaMoral extends Component {
         </div>
 
         <div className='personamoral-form'>
-          <PersonaMoralForm />
+          <PersonaFisicaForm />
         </div>
       </div>
     );
