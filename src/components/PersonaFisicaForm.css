@@ -1,0 +1,40 @@
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.personafisicaform {
+}
+
+input[type='text'],
+input[type='date'] {
+  margin-bottom: 20px;
+  padding: 8px 18px;
+
+  border: 1px solid rgba(218, 218, 218, 0.877);
+  border-radius: 5px;
+}
+
+button {
+  display: block;
+
+  width: 100%;
+  padding: 20px;
+
+  background: none;
+  border: none;
+  border-radius: 5px;
+
+  font-size: 15px;
+
+  color: white;
+  background-color: #7264c9;
+}
