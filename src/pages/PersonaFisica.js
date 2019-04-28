@@ -7,7 +7,6 @@ import PersonaFisicaForm from '../components/PersonaFisicaForm';
 import PersonaMoralForm from '../components/PersonaMoralForm';
 
 import arrow from '../imgs/left-arrow.svg';
-
 import ScrollReveal from '../util/ScrollReveal';
 
 class PersonaFisica extends Component {
@@ -24,6 +23,7 @@ class PersonaFisica extends Component {
     ScrollReveal.reveal(this.refs.box1, config);
   };
   render() {
+    const completed = true;
     return (
       <div className='personafisica' ref='box1'>
         <div className='personafisica-info'>
