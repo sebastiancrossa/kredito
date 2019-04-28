@@ -9,7 +9,7 @@ class PersonaFisicaForm extends Component {
         <label for='personafisicaform-name'>Nombre Completo:</label>
         <input type='text' id='personafisicaform-name' />
 
-        <label for='personafisicaform-date'>Correo:</label>
+        <label for='personafisicaform-date'>Fecha de nacimiento:</label>
         <input type='date' id='personafisicaform-date' />
 
         <label for='personafisicaform-ingresos'>Ingresos mensuales:</label>

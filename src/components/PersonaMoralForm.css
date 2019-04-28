@@ -47,6 +47,14 @@ input[type='number'] {
   margin-bottom: 0px;
 }
 
+.personamoral-ingresos-input {
+  margin-bottom: 20px;
+}
+
+.personamoralform-slider {
+  margin: 30px 0 30px 0;
+}
+
 button {
   display: block;
 
@@ -61,4 +69,6 @@ button {
 
   color: white;
   background-color: #7264c9;
+
+  margin-top: 40px;
 }
