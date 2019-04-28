@@ -107,7 +107,7 @@ button {
 
   width: 30px;
   height: 30px;
-  margin-top: 15px;
+  margin-top: 20px;
 }
 
 .modal-grid {
@@ -142,5 +142,13 @@ button {
   background-color: #7264c9;
   text-align: center;
 
-  margin-top: 40px;
+  margin-top: 220px;
+}
+
+.resultado-loan {
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 30px;
+
+  text-align: center;
 }

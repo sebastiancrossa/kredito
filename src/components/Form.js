@@ -13,7 +13,7 @@ class Form extends Component {
             to='/persona/fisica/form'
             className='form-button-group-fisica form-button-group-button'
           >
-            FISICA
+            FÍSICA
           </Link>
 
           <Link

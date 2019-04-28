@@ -42,8 +42,8 @@ body {
   width: 500px;
   padding: 40px;
 
-  -webkit-box-shadow: 0px 8px 39px -11px rgba(166, 166, 166, 0.425);
-  -moz-box-shadow: 0px 8px 39px -11px rgba(166, 166, 166, 0.37);
+  -webkit-box-shadow: 0px 8px 39px -11px rgba(122, 122, 122, 0.658);
+  -moz-box-shadow: 0px 8px 39px -11px rgba(166, 166, 166, 0.836);
   box-shadow: 0px 8px 39px -11px rgba(166, 166, 166, 0.37);
 
   border-radius: 5px;

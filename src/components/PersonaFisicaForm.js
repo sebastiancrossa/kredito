@@ -106,7 +106,7 @@ class PersonaFisicaForm extends Component {
           onChange={this.onChangeLegalName}
         />
 
-        <label for='personafisicaform-date'>Fecha de constitucion:</label>
+        <label for='personafisicaform-date'>Fecha de constitución:</label>
         <input
           type='date'
           id='personafisicaform-date'
@@ -130,7 +130,7 @@ class PersonaFisicaForm extends Component {
           />
         </div>
 
-        <label for='personafisicaform-prestamo'>Pedido de prestamo:</label>
+        <label for='personafisicaform-prestamo'>Cantidad deseada:</label>
         <div className='personafisica-ingresos-input'>
           <p className='personafisica-signo'>$</p>
           <input
@@ -140,7 +140,9 @@ class PersonaFisicaForm extends Component {
           />
         </div>
 
-        <p className='personamoralform-slider-label'>Quiero pagarlo en...</p>
+        <p className='personamoralform-slider-label'>
+          Quiero pagarlo en ___ meses
+        </p>
         <Slider
           className='personamoralform-slider'
           min={6}
