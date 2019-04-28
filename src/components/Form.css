@@ -1,0 +1,39 @@
+.form-form {
+}
+
+.form-title {
+  text-align: center;
+  margin: 5px auto 30px auto;
+
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  font-weight: 500;
+}
+
+.form-button-group {
+  justify-content: center;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 35px;
+}
+
+.form-button-group-button {
+  background: none;
+  border: none;
+  border-radius: 5px;
+
+  padding: 20px 50px;
+  color: white;
+  background-color: #7264c9;
+
+  font-size: 13px;
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  font-weight: 400;
+
+  cursor: pointer;
+
+  transition: transform 0.3s ease;
+}
+
+.form-button-group-button:hover {
+  transform: scale(1.05);
+}
