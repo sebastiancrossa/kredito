@@ -1,19 +1,24 @@
 import React, { Component } from 'react';
 import './Form.css';
 
+import { Link } from 'react-router-dom';
+
 class Form extends Component {
   render() {
     return (
       <form action='' className='form-form'>
         <p className='form-title'>Eres una persona...</p>
         <div className='form-button-group'>
-          <button className='form-button-group-fisica form-button-group-button'>
+          <Link
+            to='/persona/fisica/form'
+            className='form-button-group-fisica form-button-group-button'
+          >
             FISICA
-          </button>
+          </Link>
 
-          <button className='form-button-group-moral form-button-group-button'>
+          <Link className='form-button-group-moral form-button-group-button'>
             MORAL
-          </button>
+          </Link>
         </div>
       </form>
     );

@@ -32,6 +32,7 @@
   cursor: pointer;
 
   transition: transform 0.3s ease;
+  text-decoration: none;
 }
 
 .form-button-group-button:hover {

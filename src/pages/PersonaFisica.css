@@ -1,0 +1,26 @@
+.personafisica {
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+.personafisica-header {
+  display: block;
+  text-align: center;
+
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  font-weight: 500;
+}
+
+.personafisica-form {
+  width: 500px;
+  padding: 40px;
+
+  -webkit-box-shadow: 0px 8px 39px -11px rgba(166, 166, 166, 0.37);
+  -moz-box-shadow: 0px 8px 39px -11px rgba(166, 166, 166, 0.37);
+  box-shadow: 0px 8px 39px -11px rgba(166, 166, 166, 0.37);
+
+  border-radius: 5px;
+}

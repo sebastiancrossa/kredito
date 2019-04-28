@@ -1,0 +1,16 @@
+label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.personafisicaform {
+}
+
+input[type='text'],
+input[type='email'] {
+  margin-bottom: 20px;
+  padding: 8px 18px;
+
+  border: 1px solid rgba(218, 218, 218, 0.877);
+  border-radius: 5px;
+}
