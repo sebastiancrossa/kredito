@@ -56,6 +56,12 @@ class PersonaMoralForm extends Component {
     this.setState({
       birthDate: e.target.value
     });
+  };
+
+  onChangeMonthlyEarnings = e => {
+    this.setState({
+      monthlyEarnings: e.target.value
+    });
 
     axios
       .get(
@@ -80,12 +86,6 @@ class PersonaMoralForm extends Component {
 
         console.log(rfcJson.response.data.rfc);
       });
-  };
-
-  onChangeMonthlyEarnings = e => {
-    this.setState({
-      monthlyEarnings: e.target.value
-    });
   };
 
   onChangeLoan = e => {
@@ -186,7 +186,7 @@ class PersonaMoralForm extends Component {
           onChange={this.onSliderChange}
         />
 
-        <button type='submit'>SUBMIT</button>
+        <button type='submit'>NEXT</button>
       </form>
     );
   }
