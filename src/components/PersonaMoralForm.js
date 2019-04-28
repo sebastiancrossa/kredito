@@ -1,11 +1,24 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
 
-import './PersonaMoralForm.css';
+import sr from '../util/ScrollReveal';
 
-const Handle = Slider.Handle;
+// Component imports
+
+import './PersonaMoralForm.css';
+import Modal from 'react-modal';
+
+import b1 from '../imgs/1.jpg';
+import b2 from '../imgs/2.png';
+import b3 from '../imgs/3.png';
+import b4 from '../imgs/4.png';
+import b5 from '../imgs/5.jpg';
+import b6 from '../imgs/6.png';
+
+import arrow from '../imgs/left-arrow.svg';
 
 const style = {
   width: 400,
@@ -25,6 +38,18 @@ const marks = {
   60: '60'
 };
 
+const customModalStyles = {
+  content: {
+    top: '50%',
+    left: '50%',
+    width: '600px',
+    height: '450px',
+    marginRight: '-50%',
+    padding: '30px',
+    transform: 'translate(-50%, -50%)'
+  }
+};
+
 class PersonaMoralForm extends Component {
   constructor(props) {
     super(props);
@@ -37,10 +62,62 @@ class PersonaMoralForm extends Component {
       birthDate: '',
       monthlyEarnings: '',
       loan: '',
-      termInMonths: '6'
+      termInMonths: '6',
+      modalIsOpen: false,
+      modal2IsOpen: false,
+      puntaje: '0'
     };
 
     this.onChangeFirstName = this.onChangeFirstName.bind(this);
+    this.openModal = this.openModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
+  }
+
+  handlePost = () => {
+    axios
+      .post(
+        'https://m31l0bxiyi.execute-api.us-east-2.amazonaws.com/default/Hola',
+        {
+          firstName: this.state.firstName,
+          middleName: this.state.middleName,
+          lastName: this.state.lastName,
+          rfc: this.state.rfc,
+          birthDate: this.state.rfc,
+          monthlyEarnings: this.state.monthlyEarnings,
+          loan: this.state.loan,
+          termInMonths: this.state.termInMonths
+        }
+      )
+      .then(res => {
+        this.setState({
+          puntaje: JSON.parse(res.data).category
+        });
+      });
+
+    this.setState({
+      modalIsOpen: false,
+      modal2IsOpen: true
+    });
+  };
+
+  openModal() {
+    this.setState({ modalIsOpen: true });
+  }
+
+  closeModal() {
+    this.setState({ modalIsOpen: false });
+  }
+
+  openModal2() {
+    this.setState({
+      modal2IsOpen: true
+    });
+  }
+
+  closeModal2() {
+    this.setState({
+      modal2IsOpen: false
+    });
   }
 
   onChangeFirstName = e => {
@@ -108,29 +185,21 @@ class PersonaMoralForm extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
+  };
 
-    axios
-      .post(
-        'https://m31l0bxiyi.execute-api.us-east-2.amazonaws.com/default/Hola',
-        {
-          firstName: this.state.firstName,
-          middleName: this.state.middleName,
-          lastName: this.state.lastName,
-          rfc: this.state.rfc,
-          birthDate: this.state.rfc,
-          monthlyEarnings: this.state.monthlyEarnings,
-          loan: this.state.loan,
-          termInMonths: this.state.termInMonths
-        }
-      )
-      .then(res => {
-        console.log(res.data);
-      });
+  handlePuntaje = e => {
+    this.setState({
+      puntaje: e.target.value
+    });
   };
 
   render() {
     return (
-      <form className='personamoralform' onSubmit={this.handleSubmit}>
+      <form
+        className='personamoralform'
+        onSubmit={this.handleSubmit}
+        onChange={this.onChangeOpacity}
+      >
         <label htmlFor='personamoralform-name'>Nombre Completo:</label>
         <input
           type='text'
@@ -175,7 +244,9 @@ class PersonaMoralForm extends Component {
           />
         </div>
 
-        <p className='personamoralform-slider-label'>Quiero pagarlo en...</p>
+        <p className='personamoralform-slider-label'>
+          Quiero pagarlo en ___ meses.
+        </p>
         <Slider
           className='personamoralform-slider'
           min={6}
@@ -186,7 +257,71 @@ class PersonaMoralForm extends Component {
           onChange={this.onSliderChange}
         />
 
-        <button type='submit'>NEXT</button>
+        <button
+          type='submit'
+          onClick={
+            this.state.firstName != '' &&
+            this.state.middleName != '' &&
+            this.state.lasttName != '' &&
+            this.state.rfc != '' &&
+            this.state.birthDate != '' &&
+            this.state.monthlyEarnings != '' &&
+            this.state.loan != ''
+              ? this.openModal
+              : null
+          }
+        >
+          NEXT
+        </button>
+        <Modal
+          isOpen={this.state.modalIsOpen}
+          onRequestClose={this.closeModal}
+          style={customModalStyles}
+          contentLabel='Lista de bancos...'
+        >
+          <button className='modal-button' onClick={this.closeModal}>
+            x
+          </button>
+          <h2 className='modal-title'>Elija su banco actual...</h2>
+
+          <div className='modal-grid'>
+            <a href=''>
+              <img src={b1} alt='' className='modal-grid-img' />
+            </a>
+            <a href=''>
+              <img src={b2} alt='' className='modal-grid-img' />
+            </a>
+            <a href=''>
+              <img src={b3} alt='' className='modal-grid-img' />
+            </a>
+            <a href=''>
+              <img src={b4} alt='' className='modal-grid-img' />
+            </a>
+            <a href=''>
+              <img src={b5} alt='' className='modal-grid-img' />
+            </a>
+            <a href=''>
+              <img src={b6} alt='' className='modal-grid-img' />
+            </a>
+          </div>
+
+          <button className='modal-submit-button' onClick={this.handlePost}>
+            SUBMIT
+          </button>
+        </Modal>
+
+        <Modal
+          isOpen={this.state.modal2IsOpen}
+          onRequestClose={this.closeModal2}
+          style={customModalStyles}
+          contentLabel='Resultado...'
+        >
+          <h2 className='modal-title'>Resultado</h2>
+          <div className='modal2-resultado' />
+          <Link to='/' className='modal-submit-link'>
+            REINICIAR
+          </Link>
+        </Modal>
       </form>
     );
   }

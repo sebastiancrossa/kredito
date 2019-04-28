@@ -19,7 +19,7 @@
 
   font-family: 'Montserrat', Arial, Helvetica, sans-serif;
   font-weight: 500;
-  padding-right: 20px;
+  padding-right: 33px;
 }
 
 .personamoral-info-back {
@@ -32,6 +32,13 @@
   font-family: 'Montserrat', Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 13px;
+
+  width: 40px;
+}
+
+.personamoral-info-back-arrow {
+  width: 20px;
+  height: auto;
 }
 
 .personamoral-form {
