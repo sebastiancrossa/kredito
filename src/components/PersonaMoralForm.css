@@ -142,7 +142,14 @@ button {
   background-color: #7264c9;
   text-align: center;
 
-  margin-top: 220px;
+  margin-top: 120px;
+}
+
+.modal-submit-links-grid {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+
+  grid-gap: 30px;
 }
 
 .resultado-loan {

@@ -7,7 +7,6 @@ import 'rc-slider/assets/index.css';
 import sr from '../util/ScrollReveal';
 
 // Component imports
-
 import './PersonaMoralForm.css';
 import Modal from 'react-modal';
 
@@ -78,7 +77,8 @@ class PersonaMoralForm extends Component {
       termInMonths: '6',
       modalIsOpen: false,
       modal2IsOpen: false,
-      puntaje: '0'
+      puntaje: '0',
+      completed: 'false'
     };
 
     this.onChangeFirstName = this.onChangeFirstName.bind(this);
@@ -119,26 +119,29 @@ class PersonaMoralForm extends Component {
     if (this.state.puntaje == 'A') {
       return (
         <p className='resultado-loan'>
-          100% de tu {this.state.loan} de prestamo (${this.state.loan}) +
-          {this.state.loan * 0.1 + this.state.loan}+ 25% de interes
+          100% de tu ${this.state.loan} de prestamo (${this.state.loan}) + $
+          {this.state.loan * 0.1} del total ($
+          {this.state.loan * 0.1 + this.state.loan}) + 25% de interes
         </p>
       );
     } else if (this.state.puntaje == 'B') {
       return (
         <p className='resultado-loan'>
-          100% de tu {this.state.loan} de prestamo (${this.state.loan}) + 29% de
-          interes
+          100% de tu ${this.state.loan} de prestamo (${this.state.loan}) + 29%
+          de interes
         </p>
       );
     } else if (this.state.puntaje == 'C') {
       return (
         <p className='resultado-loan'>
-          75% de tu {this.state.loan} de prestamo ($
+          75% de tu ${this.state.loan} de prestamo ($
           {this.status.loan * 0.75 + this.status.loan}) + 35% de interes
         </p>
       );
-    } else {
+    } else if (this.state.puntaje == 'D') {
       return <p className='resultado-loan'>No tenemos ningun plan para ti</p>;
+    } else {
+      return <p className='resultado-loan'>Espere</p>;
     }
   }
 
@@ -360,11 +363,16 @@ class PersonaMoralForm extends Component {
           contentLabel='Resultado...'
           refs='box1'
         >
-          <h2 className='modal-title'>Resultado</h2>
+          <h2 className='modal-title'>Te ofrecemos</h2>
           <div className='modal2-resultado'>{this.renderResultElement()}</div>
-          <Link to='/' className='modal-submit-link'>
-            REINICIAR
-          </Link>
+          <div className='modal-submit-links-grid'>
+            <Link to='/' className='modal-submit-link'>
+              Accept
+            </Link>
+            <Link to='/' className='modal-submit-link'>
+              REINICIAR
+            </Link>
+          </div>
         </Modal>
       </form>
     );
