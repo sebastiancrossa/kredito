@@ -11,6 +11,12 @@ label {
   margin-bottom: 8px;
 }
 
+label,
+.personamoralform-slider-label {
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  font-weight: 400;
+}
+
 input[type='text'],
 input[type='date'],
 input[type='number'] {
