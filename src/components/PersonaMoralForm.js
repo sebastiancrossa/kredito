@@ -3,9 +3,17 @@ import axios from 'axios';
 import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
 
-import './PersonaMoralForm.css';
+// Component imports
 
-const Handle = Slider.Handle;
+import './PersonaMoralForm.css';
+import Modal from 'react-modal';
+
+import b1 from '../imgs/1.jpg';
+import b2 from '../imgs/2.png';
+import b3 from '../imgs/3.png';
+import b4 from '../imgs/4.png';
+import b5 from '../imgs/5.jpg';
+import b6 from '../imgs/6.png';
 
 const style = {
   width: 400,
@@ -25,6 +33,18 @@ const marks = {
   60: '60'
 };
 
+const customModalStyles = {
+  content: {
+    top: '50%',
+    left: '50%',
+    width: '600px',
+    height: '350px',
+    marginRight: '-50%',
+    padding: '30px',
+    transform: 'translate(-50%, -50%)'
+  }
+};
+
 class PersonaMoralForm extends Component {
   constructor(props) {
     super(props);
@@ -37,10 +57,21 @@ class PersonaMoralForm extends Component {
       birthDate: '',
       monthlyEarnings: '',
       loan: '',
-      termInMonths: '6'
+      termInMonths: '6',
+      modalIsOpen: false
     };
 
     this.onChangeFirstName = this.onChangeFirstName.bind(this);
+    this.openModal = this.openModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
+  }
+
+  openModal() {
+    this.setState({ modalIsOpen: true });
+  }
+
+  closeModal() {
+    this.setState({ modalIsOpen: false });
   }
 
   onChangeFirstName = e => {
@@ -175,7 +206,9 @@ class PersonaMoralForm extends Component {
           />
         </div>
 
-        <p className='personamoralform-slider-label'>Quiero pagarlo en...</p>
+        <p className='personamoralform-slider-label'>
+          Quiero pagarlo en ___ meses.
+        </p>
         <Slider
           className='personamoralform-slider'
           min={6}
@@ -186,7 +219,54 @@ class PersonaMoralForm extends Component {
           onChange={this.onSliderChange}
         />
 
-        <button type='submit'>NEXT</button>
+        <button
+          type='submit'
+          onClick={
+            this.state.firstName != '' &&
+            this.state.middleName != '' &&
+            this.state.lasttName != '' &&
+            this.state.rfc != '' &&
+            this.state.birthDate != '' &&
+            this.state.monthlyEarnings != '' &&
+            this.state.loan != ''
+              ? this.openModal
+              : null
+          }
+        >
+          NEXT
+        </button>
+        <Modal
+          isOpen={this.state.modalIsOpen}
+          onRequestClose={this.closeModal}
+          style={customModalStyles}
+          contentLabel='Lista de bancos...'
+        >
+          <button className='modal-button' onClick={this.closeModal}>
+            x
+          </button>
+          <h2 className='modal-title'>Elija su banco actual...</h2>
+
+          <div className='modal-grid'>
+            <a href=''>
+              <img src={b1} alt='' className='modal-grid-img' />
+            </a>
+            <a href=''>
+              <img src={b2} alt='' className='modal-grid-img' />
+            </a>
+            <a href=''>
+              <img src={b3} alt='' className='modal-grid-img' />
+            </a>
+            <a href=''>
+              <img src={b4} alt='' className='modal-grid-img' />
+            </a>
+            <a href=''>
+              <img src={b5} alt='' className='modal-grid-img' />
+            </a>
+            <a href=''>
+              <img src={b6} alt='' className='modal-grid-img' />
+            </a>
+          </div>
+        </Modal>
       </form>
     );
   }

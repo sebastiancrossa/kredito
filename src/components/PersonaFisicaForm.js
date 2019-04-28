@@ -31,7 +31,6 @@ class PersonaFisicaForm extends Component {
       legalName: '',
       dateFounded: '',
       rfc: '',
-      birthDate: '',
       monthlyEarnings: '',
       loan: '',
       termInMonths: '6'
@@ -41,23 +40,20 @@ class PersonaFisicaForm extends Component {
   }
 
   onChangeLegalName = e => {
-    var splitName = e.target.value.split(' ');
     this.setState({
-      firstName: splitName[0],
-      middleName: splitName[1],
-      lastName: splitName[2]
+      legalName: e.target.value
     });
   };
 
   onChangeDate = e => {
     this.setState({
-      birthDate: e.target.value
+      dateFounded: e.target.value
     });
   };
 
   onChangeRFC = e => {
     this.setState({
-      rfc: this.rfc
+      rfc: e.target.value
     });
   };
 
@@ -73,12 +69,6 @@ class PersonaFisicaForm extends Component {
     });
   };
 
-  onChangeTermInMonths = e => {
-    this.setState({
-      termInMonths: String(e.target.value)
-    });
-  };
-
   onSliderChange = sliderValues => {
     this.setState({
       termInMonths: sliderValues
@@ -89,13 +79,12 @@ class PersonaFisicaForm extends Component {
     //alert(this.state.termInMonths);
     e.preventDefault();
 
-    /*
     axios
       .post(
-        'https://m31l0bxiyi.execute-api.us-east-2.amazonaws.com/default/Hola',
+        'https://m31l0bxiyi.execute-api.us-east-2.amazonaws.com/default/InputMoral',
         {
-          legalName: this.legalName,
-          dateFounded: this.dateFounded,
+          legalName: this.state.legalName,
+          dateFounded: this.state.dateFounded,
           rfc: this.state.rfc,
           monthlyEarnings: this.state.monthlyEarnings,
           loan: this.state.loan,
@@ -105,7 +94,6 @@ class PersonaFisicaForm extends Component {
       .then(res => {
         console.log(res.data);
       });
-      */
   };
 
   render() {
@@ -148,7 +136,7 @@ class PersonaFisicaForm extends Component {
           <input
             type='number'
             id='personafisica-prestamo'
-            onChange={this.onChangeMonthlyEarnings}
+            onChange={this.onChangeLoan}
           />
         </div>
 
